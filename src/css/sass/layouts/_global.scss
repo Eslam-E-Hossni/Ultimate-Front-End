@@ -1,0 +1,10 @@
+.page {
+  min-height: 100vh;
+  &__content {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    transition: .3s;
+    will-change: width;
+    margin-left: auto;
+  }
+}
