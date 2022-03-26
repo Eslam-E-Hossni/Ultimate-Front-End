@@ -1,0 +1,12 @@
+.page {
+  &__sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    padding: 15px;
+    background-color: #eee;
+    transition: .3s;
+  }
+}
