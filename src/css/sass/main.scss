@@ -1,7 +1,20 @@
+/* Font */
 @import 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap';
 
+/* Base */
 @import "./base/reset";
 
+/* Abstracts */
+@import "./abstracts/colors";
+@import "./abstracts/mixins";
 
-@import "./layouts/global";
+/* vendors */
+@import "./vendors/bootstrap";
+
+/* Layouts */
 @import "./layouts/sidebar";
+@import "./layouts/global";
+@import "./layouts/header";
+
+/* Components */
+@import "./components/settings-box"

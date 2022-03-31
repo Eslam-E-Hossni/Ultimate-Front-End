@@ -1,0 +1,22 @@
+$main-color: #e74c3c;
+
+$sidbar-bg: #262d49;
+$content-bg: #1b203d;
+
+$themes: (
+  light-red-theme: (color: #fc5c65),
+  dark-red-theme: (color: #e74c3c),
+  burble-theme: (color: #a55eea),
+  green-theme: (color: #1abc9c),
+  blue-theme: (color: #3498db),
+);
+
+@each $theme, $map in $themes {
+  .#{$theme} {
+    .page__sidebar-logo h2 .logo-hilight,
+    .page__sidebar-nav--links li a:hover,
+    .page__sidebar-footer .copy-right a {
+      color: map-get($map, color);
+    }
+  }
+}

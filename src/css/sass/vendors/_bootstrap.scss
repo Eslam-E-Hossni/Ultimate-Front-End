@@ -1,0 +1,26 @@
+.page__content-header {
+  .dropdown-menu {
+    background-color: $sidbar-bg;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    user-select: none;
+    top: 30px !important;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      border-color: transparent transparent $sidbar-bg transparent;
+      border-style: solid;
+      border-width: 15px 15px 15px 15px;
+    }
+    a {
+      color: #FFF;
+      &:hover {
+        background: unset;
+        color: #fff;
+        opacity: .8;
+      }
+    }
+  }
+}

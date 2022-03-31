@@ -1,0 +1,71 @@
+$box-width: 300px;
+$closeBtn-width: 35px;
+.settings-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: $box-width;
+  height: 100%;
+  border: 1px solid #333b5c;
+  background-color: $sidbar-bg;
+  z-index: 1000;
+  transition: .3s;
+  &.hide-box {
+    right: (-$box-width - $closeBtn-width);
+  }
+  &__inner {
+    padding: 20px;
+    position: absolute;
+    inset: 0;
+  }
+  &__close-btn {
+    position: absolute;
+    width: $closeBtn-width;
+    height: $closeBtn-width;
+    top: 15px;
+    left: -$closeBtn-width;
+    text-align: center;
+    line-height: $closeBtn-width;
+    background-color: $sidbar-bg;
+    color: #fff;
+    font-size: 18px;
+    border-right: 1px solid #333b5c;
+  }
+  &__option {
+    border-bottom: 1px solid #333b5c;
+    padding: 15px 0;
+    margin-bottom: 25px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    h4 {
+      font-size: 16px;
+      color: #fff;
+      margin-top: 0;
+    }
+    &--colors {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      gap: 0 20px;
+    }
+    $colors: #fc5c65, #e74c3c, #a55eea, #1abc9c, #3498db;
+    @for $i from 1 through length($colors) {
+      &--color:nth-child(#{$i}) {
+        background-color: nth($colors, $i);
+      }
+    }
+    &--color {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      opacity: .7;
+      cursor: pointer;
+      &.active {
+        opacity: 1;
+      } 
+    }
+  }
+}

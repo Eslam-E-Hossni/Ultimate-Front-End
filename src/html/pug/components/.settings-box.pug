@@ -1,0 +1,16 @@
+.settings-box.hide-box
+  .settings-box__inner
+    button.settings-box__close-btn &times;
+    .settings-box__option
+      h4 Color Options
+      - const themes = ["light-red-theme", "dark-red-theme", "burble-theme", "green-theme", "blue-theme"]
+      ul.settings-box__option--colors
+        each theme in themes
+          if theme === "dark-red-theme"
+            li.settings-box__option--color(data-theme=theme class="active")
+          else
+            li.settings-box__option--color(data-theme=theme)
+    .settings-box__option
+      h4 Font Options
+    .settings-box__option
+      h4 Layout Options

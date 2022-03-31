@@ -1,1 +1,38 @@
-.page__sidebar Sidebar
+.page__sidebar
+  button.toggle-sidebar
+    i.fa.fa-exchange
+  .page__sidebar-inner 
+    .page__sidebar-logo
+      h2 #[span.logo-hilight &copy; Power]Pixel
+    .page__sidebar-nav
+      span.page__sidebar-nav--title MAIN
+      ul.page__sidebar-nav--links
+        li
+          a(href="#") #[i.fa.fa-tachometer] dashboard
+        li
+          a(href="#") #[i.fa.fa-first-order] orders
+        li
+          a(href="#") #[i.fa.fa-line-chart] analytics
+        li
+          a(href="#") #[i.fa.fa-clone] categories
+        li.has-sub-menu
+          a(href="#" class="d-flex justify-content-between align-items-center")
+            span #[i.fa.fa-product-hunt] products
+            i.fa.fa-chevron-down.toggle
+          ul.page__sidebar-nav--sublinks
+            li
+              a(href="#") #[i.fa.fa-money] Discount
+            li
+              a(href="#") #[i.fa.fa-users] customers
+        li.has-sub-menu
+          a(href="#" class="d-flex justify-content-between align-items-center")
+            span #[i.fa.fa-signal] Misc
+            i.fa.fa-chevron-down.toggle
+          ul.page__sidebar-nav--sublinks
+            li
+              a(href="#") #[i.fa.fa-spinner] Loading
+        li
+          a(href="#") #[i.fa.fa-rocket] optimization
+
+    .page__sidebar-footer
+      p.copy-right COPYRIGHT © 2020. ALL RIGHTS RESERVED. DESIGNED BY #[a(href="#") Eslam Emad]

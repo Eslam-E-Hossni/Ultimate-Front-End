@@ -2,12 +2,17 @@
 doctype html
 html(lang="en")
   head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title #{pageTitle}
+    include pug/layouts/.meta
+    include pug/layouts/.styles
   body
     .page.home 
+      include pug/components/.settings-box
       include pug/layouts/.sidebar
       .page__content
-        h1 #{pageTitle}
+        include pug/layouts/.header
+        .container-fluid
+          .content
+            include pug/components/.pageHead
+
+    include pug/layouts/.scripts
+

@@ -2,8 +2,8 @@ const path = require("path");
 const { generateHtmlPlugins } = require("./helpers.js");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-module.exports = {
-  // devtool: "source-map",
+module.exports = { 
+  devtool: "eval-source-map",
   entry: {
     index: path.resolve(__dirname, "../", "src/js/main.ts"),
   },
@@ -12,9 +12,18 @@ module.exports = {
     filename: "app-assets/js/[contenthash:8]-[name].js",
     clean: true,
   },
+  externals: {
+    jquery: 'jQuery',
+  },
+  optimization: {
+    runtimeChunk: true,
+  },
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
     extensions: [".ts", ".tsx", ".js"],
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+    },
   },
   plugins: [
     ...generateHtmlPlugins("html"),
@@ -27,9 +36,9 @@ module.exports = {
     rules: [
       {
         // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
-        test: /\.tsx?$/i,
+        test: /\.(tsx?|js)$/i,
         exclude: /node_,modules/,
-        use: ["babel-loader", "ts-loader"],
+        use: ["babel-loader"],
       },
       {
         test: /\.pug$/,
@@ -40,9 +49,8 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
-        type: "asset/resource",
+        type: "asset",
         loader: "image-webpack-loader",
-        enforce: "pre",
         generator: {
           filename: "app-assets/images/[hash][ext]",
         },
@@ -59,6 +67,7 @@ module.exports = {
         test: /\.(s[ac]ss|css)$/i,
         use: [
           MiniCssExtractPlugin.loader,
+          // "style-loader",
           "css-loader",
           "sass-loader",
           "postcss-loader",

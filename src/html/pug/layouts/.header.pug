@@ -1,0 +1,77 @@
+.page__content-header
+  .page__content-header--inner
+    ul.page__content-header--items
+      li.item
+        div.dropdown
+          div(class="profile-img" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+            img(src=require("@/images/profile.webp"), alt="profile")
+          div(class="dropdown-menu profile-drobdown dropdown-menu-right" aria-labelledby="profile")
+            ul
+              li
+                i.fa.fa-user-circle-o
+                p Profile
+              li
+                i.fa.fa-comment-o
+                p Chat
+              hr
+              li
+                i.fa.fa-sign-out
+                p Logout
+      
+      li.item
+        .settings.icon
+          i.fa.fa-cog
+      
+      li.item
+        div.dropdown
+          div(class="notification icon" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+              i.fa.fa-bell-o
+          div(class="dropdown-menu notification-drobdown dropdown-menu-right" aria-labelledby="notification")
+            .noti__head
+              h5 Notifications 
+            .noti__content
+              ul.noti__content--items
+
+                li.noti__content--item.success
+                  i.fa.fa-user-circle
+                  .body.d-flex
+                    h6 Brunch this weekend?
+                    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, repudiandae?
+                  span.time 30 min
+                hr
+                li.noti__content--item.teal
+                  i.fa.fa-money.fa-lg
+                  .body.d-flex
+                    h6 Summer BBQ
+                    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, repudiandae?
+                  span.time 30 min
+                hr
+
+                li.noti__content--item.grey
+                  i.fa.fa-thumbs-o-up.fa-lg
+                  .body.d-flex
+                    h6 Oui oui
+                    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, repudiandae?
+                  span.time 30 min
+                hr
+
+                li.noti__content--item.primary
+                  i.fa.fa-envelope-o.fa-lg
+                  .body.d-flex
+                    h6 Disk capacity is at maximum
+                    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, repudiandae?
+                  span.time 30 min
+                hr
+
+                li.noti__content--item.success
+                  i.fa.fa-money.fa-lg
+                  .body.d-flex
+                    h6 Recipe to try
+                    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, repudiandae?
+                  span.time 30 min
+            .noti__footer.text-center
+              a(href="#") See all
+      
+      li.item
+        .toggle-fullscreen.icon
+          i.fa.fa-expand

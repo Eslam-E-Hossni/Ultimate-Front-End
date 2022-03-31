@@ -1,12 +1,126 @@
+$sidebar-width: 290px;
 .page {
   &__sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: $sidebar-width;
     height: 100%;
     padding: 15px;
-    background-color: #eee;
+    background-color: $sidbar-bg;
     transition: .3s;
+    &.no-sidebar {
+      left: -$sidebar-width;
+    }
+    .toggle-sidebar {
+      position: absolute;
+      top: 0;
+      right: -40px;
+      padding: 10px;
+      background-color: $sidbar-bg;
+      transition: .2s linear;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        opacity: .8;
+      }
+      i {
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+    &-inner {
+      height: 100%;
+      padding: 20px;
+      position: absolute;
+      inset: 0;
+      overflow-y: auto;
+    }
+    &-logo {
+      padding: 20px 0;
+      text-align: center;
+      h2 {
+        display: inline-block;
+        font-size: 32px;
+        font-family: "Rubik", sans-serif;
+        font-weight: 700;
+        position: relative;
+        padding: 0 10px;
+        line-height: 50px;
+        .logo-hilight {
+          color: $main-color;
+        }
+      }
+    }
+    &-nav {
+      margin: 80px 0;
+      &--title {
+        display: block;
+        font-size: 16px;
+        color: #7b88bd;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      
+      &--links {
+        li {
+          display: block;
+          a {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ccc;
+            text-transform: capitalize;
+            text-decoration: none;
+            line-height: 55px;
+            transition: .3s ease;
+            &:hover {
+              color: $main-color;
+              padding-left: 7px;
+            }
+            i {
+              margin-right: 7px;
+            }
+          }
+          &.has-sub-menu {
+            i.toggle {
+              transition: transform .3s ease;
+              margin-right: 0;
+              padding-right: 10px;
+            }
+            &.active {
+              i.toggle {
+                transform: rotate(-180deg);
+                padding-right: 0;
+                padding-left: 10px;
+              }
+            }
+          }
+        }
+        > li > a {
+          border-bottom: 1px solid #333b5c;
+          color: #fff;
+        }
+      }
+      &--sublinks {
+        padding-left: 25px;
+        margin-top: 10px;
+        display: none;
+      }
+
+    }
+    &-footer {
+      // background-color: blue;
+      .copy-right {
+        font-size: 13px;
+        color: #7b88bd;
+        text-align: center;
+        line-height: 1.7;
+        a {
+          color: $main-color;
+        }
+      }
+    }
   }
 }
